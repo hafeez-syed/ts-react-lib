@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
 	entry: './components/index.js',
 	output: {
-		filename: 'bundle.js',
+		filename: 'one-react-components.js',
 		path: path.resolve(__dirname, './dist/')
 	},
 	resolve: {
