@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "React Components",
   "main": "dist/react-components.js",
+  "module": "dist/react-components.es.js",
   "babel": {
     "presets": [
       "@babel/preset-env",
