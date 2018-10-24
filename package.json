@@ -2,14 +2,20 @@
   "name": "react-components",
   "version": "1.0.0",
   "description": "React Components",
-  "main": "dist/react-components.js",
-  "module": "dist/react-components.es.js",
+  "main": "dist/lib/react-components.js",
+  "module": "dist/es/react-components.js",
   "babel": {
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
     ]
   },
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "tsc && webpack-dev-server --open --config webpack.dev.js"
