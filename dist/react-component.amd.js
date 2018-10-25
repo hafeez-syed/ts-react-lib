@@ -1014,10 +1014,10 @@ var shoppinglist_ShoppingList =
 function (_React$Component) {
   _inherits(ShoppingList, _React$Component);
 
-  function ShoppingList() {
+  function ShoppingList(props) {
     _classCallCheck(this, ShoppingList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ShoppingList).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(ShoppingList).call(this, props));
   }
 
   _createClass(ShoppingList, [{
@@ -1040,11 +1040,9 @@ var style = __webpack_require__(6);
 // CONCATENATED MODULE: ./components/index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numToWord", function() { return numToWord; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wordToNum", function() { return wordToNum; });
-/* concated harmony reexport Avatar */__webpack_require__.d(__webpack_exports__, "Avatar", function() { return avatar["Avatar"]; });
-/* concated harmony reexport Recipe */__webpack_require__.d(__webpack_exports__, "Recipe", function() { return recipe["Recipe"]; });
+/* concated harmony reexport Avatar */__webpack_require__.d(__webpack_exports__, "Avatar", function() { return avatar; });
+/* concated harmony reexport Recipe */__webpack_require__.d(__webpack_exports__, "Recipe", function() { return recipe; });
 /* concated harmony reexport ShoppingList */__webpack_require__.d(__webpack_exports__, "ShoppingList", function() { return shoppinglist_ShoppingList; });
-//import * as React from 'react';
-//import * as ReactDOM from 'react-dom';
 
 
 
@@ -1076,10 +1074,12 @@ export class ReactApp extends React.Component {
 }
 */
 
-/*ReactDOM.render(
+/*
+ReactDOM.render(
     <ShoppingList name="Hafeez"/>,
     document.getElementById('app')
-);*/
+);
+*/
 
 /***/ })
 /******/ ])});;

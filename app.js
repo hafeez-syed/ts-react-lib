@@ -1,1 +1,1 @@
-console.log(reactComponents.Avatar);
+import {Avatar, Recipe, ShoppingList} from './components';

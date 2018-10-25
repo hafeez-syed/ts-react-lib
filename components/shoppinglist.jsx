@@ -1,6 +1,10 @@
 import * as React from 'react';
 
 export class ShoppingList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div className="shopping-list">

@@ -1,14 +1,9 @@
-//import * as React from 'react';
-//import * as ReactDOM from 'react-dom';
-
-import {Avatar} from "./avatar";
-import {Recipe} from "./recipe";
+import * as Avatar from "./avatar";
+import * as Recipe from "./recipe";
 import {ShoppingList} from "./shoppinglist";
 import numRef from './ref.json';
 
 import '../css/style.less';
-
-
 
 function numToWord(num) {
     return _.reduce(numRef, (accum, ref) => {
@@ -43,7 +38,9 @@ export class ReactApp extends React.Component {
 }
 */
 
-/*ReactDOM.render(
+/*
+ReactDOM.render(
     <ShoppingList name="Hafeez"/>,
     document.getElementById('app')
-);*/
+);
+*/

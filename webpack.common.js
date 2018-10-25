@@ -10,13 +10,13 @@ module.exports = {
 		path: path.resolve(__dirname, './dist/')
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+		extensions: ['*', '.ts', '.tsx', '.js', '.jsx', '.json']
 	},
 	module: {
 		rules: [
             { test: /\.less$/, loader: ['style-loader', 'css-loader', 'less-loader'], exclude: /node_modules/},
 			{ test: /\.tsx?$/, loader: ['awesome-typescript-loader'], exclude: /node_modules/ },
-            { test: /\.jsx?$/, loader: ['source-map-loader', 'babel-loader'], exclude: /node_modules/, enforce: 'pre' },
+            { test: /\.(js|jsx)$/, loader: ['babel-loader'], exclude: /node_modules/, enforce: 'pre' },
             { test: /\.html$/i, loader: 'html-loader', exclude: /node_modules/}
 		]
 	},
