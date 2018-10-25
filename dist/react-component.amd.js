@@ -861,34 +861,49 @@ __webpack_require__.d(recipe_namespaceObject, "Recipe", function() { return reci
 var react = __webpack_require__(0);
 
 // CONCATENATED MODULE: ./components/avatar.tsx
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 
-class avatar_Avatar extends react["Component"] {
-    constructor(props) {
-        super(props);
-        this.state = {
+var avatar_Avatar = /** @class */ (function (_super) {
+    __extends(Avatar, _super);
+    function Avatar(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
             githubRepo: props.githubRepo
         };
-        this.updateRepo = this.updateRepo.bind(this);
+        _this.updateRepo = _this.updateRepo.bind(_this);
+        return _this;
     }
-    updateRepo(repo) {
-        this.setState(() => {
+    Avatar.prototype.updateRepo = function (repo) {
+        this.setState(function () {
             return {
                 githubRepo: repo
             };
         });
-    }
-    componentDidMount() {
+    };
+    Avatar.prototype.componentDidMount = function () {
         if (this.state.githubRepo) {
             this.updateRepo(this.state.githubRepo);
         }
-    }
-    render() {
-        let githubRepo = this.state.githubRepo;
+    };
+    Avatar.prototype.render = function () {
+        var githubRepo = this.state.githubRepo;
         return (react["createElement"]("div", null,
             react["createElement"]("div", { className: 'popular-rank' }, "#"),
             react["createElement"]("ul", { className: "space-list-items" },
                 react["createElement"]("li", null,
-                    react["createElement"]("img", { className: "avatar", src: githubRepo.owner.avatar_url, alt: `Avatar from ${githubRepo.owner.login}` })),
+                    react["createElement"]("img", { className: "avatar", src: githubRepo.owner.avatar_url, alt: "Avatar from " + githubRepo.owner.login })),
                 react["createElement"]("li", null,
                     react["createElement"]("a", { href: githubRepo.html_url }, githubRepo.name)),
                 react["createElement"]("li", null,
@@ -897,33 +912,50 @@ class avatar_Avatar extends react["Component"] {
                 react["createElement"]("li", null,
                     githubRepo.stargazers_count,
                     " stars"))));
-    }
-}
+    };
+    return Avatar;
+}(react["Component"]));
+
 
 // CONCATENATED MODULE: ./components/recipe.tsx
+var recipe_extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 
-class recipe_Recipe extends react["Component"] {
-    constructor(props) {
-        super(props);
-        this.state = {
+var recipe_Recipe = /** @class */ (function (_super) {
+    recipe_extends(Recipe, _super);
+    function Recipe(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
             food: props.food
         };
-        this.updateRepo = this.updateRepo.bind(this);
+        _this.updateRepo = _this.updateRepo.bind(_this);
+        return _this;
     }
-    updateRepo(food) {
-        this.setState(() => {
+    Recipe.prototype.updateRepo = function (food) {
+        this.setState(function () {
             return {
                 food: food
             };
         });
-    }
-    componentDidMount() {
+    };
+    Recipe.prototype.componentDidMount = function () {
         if (this.state.food) {
             this.updateRepo(this.state.food);
         }
-    }
-    render() {
-        let food = this.state.food;
+    };
+    Recipe.prototype.render = function () {
+        var food = this.state.food;
         return (react["createElement"]("div", null,
             react["createElement"]("a", { className: 'recipe-link', href: "#" },
                 react["createElement"]("img", { src: food.image_url, alt: food.title }),
@@ -932,8 +964,10 @@ class recipe_Recipe extends react["Component"] {
             react["createElement"]("br", null),
             react["createElement"]("span", { className: "publisher" }, food.publisher),
             react["createElement"]("span", { className: "badge badge-important" }, food.social_rank)));
-    }
-}
+    };
+    return Recipe;
+}(react["Component"]));
+
 
 // CONCATENATED MODULE: ./components/shoppinglist.jsx
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
