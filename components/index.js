@@ -8,22 +8,27 @@ import numRef from './ref.json';
 
 import '../css/style.less';
 
-export {
-    Avatar,
-    Recipe,
-    ShoppingList
-}
 
-export function numToWord(num) {
+
+function numToWord(num) {
     return _.reduce(numRef, (accum, ref) => {
         return ref.num === num ? ref.word : accum;
     }, '');
 }
 
-export function wordToNum(word) {
+function wordToNum(word) {
     return _.reduce(numRef, (accum, ref) => {
         return ref.word === word && word.toLowerCase() ? ref.num : accum;
     }, -1);
+}
+
+
+export {
+    Avatar,
+    Recipe,
+    ShoppingList,
+    numToWord,
+    wordToNum
 }
 
 /*
@@ -36,9 +41,9 @@ export class ReactApp extends React.Component {
         )
     }
 }
+*/
 
-ReactDOM.render(
+/*ReactDOM.render(
     <ShoppingList name="Hafeez"/>,
     document.getElementById('app')
-);
-*/
+);*/
