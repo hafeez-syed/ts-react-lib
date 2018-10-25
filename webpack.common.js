@@ -2,12 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-//const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 
 module.exports = {
 	entry: './components/index.js',
 	output: {
-		filename: 'one-react-components.js',
+		filename: 'dev-react-component.js',
 		path: path.resolve(__dirname, './dist/')
 	},
 	resolve: {
