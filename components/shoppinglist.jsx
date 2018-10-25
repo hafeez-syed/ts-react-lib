@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export class ShoppingList extends React.Component {
     render() {
         return (
