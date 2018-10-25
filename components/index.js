@@ -1,20 +1,15 @@
 import * as Avatar from "./avatar";
 import * as Recipe from "./recipe";
 import {ShoppingList} from "./shoppinglist";
-import numRef from './ref.json';
 
 import '../css/style.less';
 
-function numToWord(num) {
-    return _.reduce(numRef, (accum, ref) => {
-        return ref.num === num ? ref.word : accum;
-    }, '');
+function numbers() {
+    return [1,2,3,4,5,6,7,8,9];
 }
 
-function wordToNum(word) {
-    return _.reduce(numRef, (accum, ref) => {
-        return ref.word === word && word.toLowerCase() ? ref.num : accum;
-    }, -1);
+function strings() {
+    return ['A', 'B', 'C'];
 }
 
 
@@ -22,8 +17,8 @@ export {
     Avatar,
     Recipe,
     ShoppingList,
-    numToWord,
-    wordToNum
+    numbers,
+    strings
 }
 
 /*

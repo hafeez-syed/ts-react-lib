@@ -1,1 +1,1 @@
-import {Avatar, Recipe, ShoppingList} from './components';
+import {Avatar, Recipe, ShoppingList} from './components/index';
