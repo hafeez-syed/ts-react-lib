@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -93,12 +93,135 @@ module.exports =
 
 
 if (true) {
-  module.exports = __webpack_require__(1);
+  module.exports = __webpack_require__(3);
 } else {}
 
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var Avatar = /** @class */ (function (_super) {
+    __extends(Avatar, _super);
+    function Avatar(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            githubRepo: props.githubRepo
+        };
+        _this.updateRepo = _this.updateRepo.bind(_this);
+        return _this;
+    }
+    Avatar.prototype.updateRepo = function (repo) {
+        this.setState(function () {
+            return {
+                githubRepo: repo
+            };
+        });
+    };
+    Avatar.prototype.componentDidMount = function () {
+        if (this.state.githubRepo) {
+            this.updateRepo(this.state.githubRepo);
+        }
+    };
+    Avatar.prototype.render = function () {
+        var githubRepo = this.state.githubRepo;
+        return (React.createElement("div", null,
+            React.createElement("div", { className: 'popular-rank' }, "#"),
+            React.createElement("ul", { className: "space-list-items" },
+                React.createElement("li", null,
+                    React.createElement("img", { className: "avatar", src: githubRepo.owner.avatar_url, alt: "Avatar from " + githubRepo.owner.login })),
+                React.createElement("li", null,
+                    React.createElement("a", { href: githubRepo.html_url }, githubRepo.name)),
+                React.createElement("li", null,
+                    "@",
+                    githubRepo.owner.login),
+                React.createElement("li", null,
+                    githubRepo.stargazers_count,
+                    " stars"))));
+    };
+    return Avatar;
+}(React.Component));
+exports.Avatar = Avatar;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var Recipe = /** @class */ (function (_super) {
+    __extends(Recipe, _super);
+    function Recipe(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            food: props.food
+        };
+        _this.updateRepo = _this.updateRepo.bind(_this);
+        return _this;
+    }
+    Recipe.prototype.updateRepo = function (food) {
+        this.setState(function () {
+            return {
+                food: food
+            };
+        });
+    };
+    Recipe.prototype.componentDidMount = function () {
+        if (this.state.food) {
+            this.updateRepo(this.state.food);
+        }
+    };
+    Recipe.prototype.render = function () {
+        var food = this.state.food;
+        return (React.createElement("div", null,
+            React.createElement("a", { className: 'recipe-link', href: "#" },
+                React.createElement("img", { src: food.image_url, alt: food.title }),
+                React.createElement("br", null),
+                React.createElement("span", { className: "recipe-name" }, food.title)),
+            React.createElement("br", null),
+            React.createElement("span", { className: "publisher" }, food.publisher),
+            React.createElement("span", { className: "badge badge-important" }, food.social_rank)));
+    };
+    return Recipe;
+}(React.Component));
+exports.Recipe = Recipe;
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -111,7 +234,7 @@ if (true) {
  * LICENSE file in the root directory of this source tree.
  */
 
-var k=__webpack_require__(2),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.concurrent_mode"):60111,y=n?Symbol.for("react.forward_ref"):60112,z=n?Symbol.for("react.suspense"):60113,A=n?Symbol.for("react.memo"):
+var k=__webpack_require__(4),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.concurrent_mode"):60111,y=n?Symbol.for("react.forward_ref"):60112,z=n?Symbol.for("react.suspense"):60113,A=n?Symbol.for("react.memo"):
 60115,B=n?Symbol.for("react.lazy"):60116,C="function"===typeof Symbol&&Symbol.iterator;function aa(a,b,e,c,d,g,h,f){if(!a){a=void 0;if(void 0===b)a=Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var l=[e,c,d,g,h,f],m=0;a=Error(b.replace(/%s/g,function(){return l[m++]}));a.name="Invariant Violation"}a.framesToPop=1;throw a;}}
 function D(a){for(var b=arguments.length-1,e="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=0;c<b;c++)e+="&args[]="+encodeURIComponent(arguments[c+1]);aa(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",e)}var E={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},F={};
 function G(a,b,e){this.props=a;this.context=b;this.refs=F;this.updater=e||E}G.prototype.isReactComponent={};G.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?D("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};G.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};function H(){}H.prototype=G.prototype;function I(a,b,e){this.props=a;this.context=b;this.refs=F;this.updater=e||E}var J=I.prototype=new H;
@@ -129,7 +252,7 @@ isValidElement:O,version:"16.6.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -226,11 +349,11 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(4);
+var content = __webpack_require__(6);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -244,17 +367,17 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(6)(content, options);
+var update = __webpack_require__(8)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 
@@ -265,7 +388,7 @@ exports.push([module.i, "#app {\n  color: #5C5C5C;\n  display: flex;\n  font-fam
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports) {
 
 /*
@@ -347,7 +470,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -416,7 +539,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(7);
+var	fixUrls = __webpack_require__(9);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -751,7 +874,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports) {
 
 
@@ -846,129 +969,20 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var avatar_namespaceObject = {};
-__webpack_require__.r(avatar_namespaceObject);
-__webpack_require__.d(avatar_namespaceObject, "Avatar", function() { return avatar_Avatar; });
-var recipe_namespaceObject = {};
-__webpack_require__.r(recipe_namespaceObject);
-__webpack_require__.d(recipe_namespaceObject, "Recipe", function() { return recipe_Recipe; });
+
+// EXTERNAL MODULE: ./components/avatar.tsx
+var avatar = __webpack_require__(1);
+
+// EXTERNAL MODULE: ./components/recipe.tsx
+var recipe = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
-
-// CONCATENATED MODULE: ./components/avatar.tsx
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    }
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var avatar_Avatar = /** @class */ (function (_super) {
-    __extends(Avatar, _super);
-    function Avatar(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = {
-            githubRepo: props.githubRepo
-        };
-        _this.updateRepo = _this.updateRepo.bind(_this);
-        return _this;
-    }
-    Avatar.prototype.updateRepo = function (repo) {
-        this.setState(function () {
-            return {
-                githubRepo: repo
-            };
-        });
-    };
-    Avatar.prototype.componentDidMount = function () {
-        if (this.state.githubRepo) {
-            this.updateRepo(this.state.githubRepo);
-        }
-    };
-    Avatar.prototype.render = function () {
-        var githubRepo = this.state.githubRepo;
-        return (react["createElement"]("div", null,
-            react["createElement"]("div", { className: 'popular-rank' }, "#"),
-            react["createElement"]("ul", { className: "space-list-items" },
-                react["createElement"]("li", null,
-                    react["createElement"]("img", { className: "avatar", src: githubRepo.owner.avatar_url, alt: "Avatar from " + githubRepo.owner.login })),
-                react["createElement"]("li", null,
-                    react["createElement"]("a", { href: githubRepo.html_url }, githubRepo.name)),
-                react["createElement"]("li", null,
-                    "@",
-                    githubRepo.owner.login),
-                react["createElement"]("li", null,
-                    githubRepo.stargazers_count,
-                    " stars"))));
-    };
-    return Avatar;
-}(react["Component"]));
-
-
-// CONCATENATED MODULE: ./components/recipe.tsx
-var recipe_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    }
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var recipe_Recipe = /** @class */ (function (_super) {
-    recipe_extends(Recipe, _super);
-    function Recipe(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = {
-            food: props.food
-        };
-        _this.updateRepo = _this.updateRepo.bind(_this);
-        return _this;
-    }
-    Recipe.prototype.updateRepo = function (food) {
-        this.setState(function () {
-            return {
-                food: food
-            };
-        });
-    };
-    Recipe.prototype.componentDidMount = function () {
-        if (this.state.food) {
-            this.updateRepo(this.state.food);
-        }
-    };
-    Recipe.prototype.render = function () {
-        var food = this.state.food;
-        return (react["createElement"]("div", null,
-            react["createElement"]("a", { className: 'recipe-link', href: "#" },
-                react["createElement"]("img", { src: food.image_url, alt: food.title }),
-                react["createElement"]("br", null),
-                react["createElement"]("span", { className: "recipe-name" }, food.title)),
-            react["createElement"]("br", null),
-            react["createElement"]("span", { className: "publisher" }, food.publisher),
-            react["createElement"]("span", { className: "badge badge-important" }, food.social_rank)));
-    };
-    return Recipe;
-}(react["Component"]));
-
 
 // CONCATENATED MODULE: ./components/shoppinglist.jsx
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1013,13 +1027,13 @@ function (_React$Component) {
   return ShoppingList;
 }(react["Component"]);
 // EXTERNAL MODULE: ./css/style.less
-var style = __webpack_require__(3);
+var style = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./components/index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return numbers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return strings; });
-/* concated harmony reexport Avatar */__webpack_require__.d(__webpack_exports__, "Avatar", function() { return avatar_namespaceObject; });
-/* concated harmony reexport Recipe */__webpack_require__.d(__webpack_exports__, "Recipe", function() { return recipe_namespaceObject; });
+/* concated harmony reexport Avatar */__webpack_require__.d(__webpack_exports__, "Avatar", function() { return avatar; });
+/* concated harmony reexport Recipe */__webpack_require__.d(__webpack_exports__, "Recipe", function() { return recipe; });
 /* concated harmony reexport ShoppingList */__webpack_require__.d(__webpack_exports__, "ShoppingList", function() { return shoppinglist_ShoppingList; });
 
 
