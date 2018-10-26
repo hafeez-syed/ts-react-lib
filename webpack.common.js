@@ -17,7 +17,8 @@ module.exports = {
             { test: /\.less$/, loader: ['style-loader', 'css-loader', 'less-loader'], exclude: /node_modules/},
 			{ test: /\.tsx?$/, loader: ['awesome-typescript-loader'], exclude: /node_modules/ },
             { test: /\.(js|jsx)$/, loader: ['babel-loader'], exclude: /node_modules/, enforce: 'pre' },
-            { test: /\.html$/i, loader: 'html-loader', exclude: /node_modules/}
+            { test: /\.html$/i, loader: 'html-loader', exclude: /node_modules/},
+            { test: /\.(png|svg|jpg|gif)$/, loader: 'file-loader'}
 		]
 	},
 	plugins: [

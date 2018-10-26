@@ -1,6 +1,7 @@
-import * as Avatar from "./avatar";
-import * as Recipe from "./recipe";
+import {Avatar} from "./avatar";
+import {Recipe} from "./recipe";
 import {ShoppingList} from "./shoppinglist";
+import {Profile} from "./profile";
 
 import '../css/style.less';
 
@@ -17,6 +18,7 @@ export {
     Avatar,
     Recipe,
     ShoppingList,
+    Profile,
     numbers,
     strings
 }
@@ -33,9 +35,7 @@ export class ReactApp extends React.Component {
 }
 */
 
-/*
 ReactDOM.render(
-    <ShoppingList name="Hafeez"/>,
+    <Profile name="Hafeez"/>,
     document.getElementById('app')
 );
-*/
