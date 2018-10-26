@@ -1,0 +1,155 @@
+{
+  "customer": {
+    "name": "Dr JANE TANIA SMITH",
+    "gender": "FEM",
+    "title": "42",
+    "suffixName": "148",
+    "occupationCode": "229211",
+    "occupationDescription": "229211",
+    "customerStatus": "ACTIVE",
+    "firstName": "JANE",
+    "middleNames": [
+      "TANIA"
+    ],
+    "lastName": "SMITH",
+    "austracHeld": "CONFIRMED",
+    "customerType": "person",
+    "primaryPhoneNumber": "61 03 03 8678 5555",
+    "phoneNumbers": [
+      {
+        "id": "1234",
+        "purpose": "HOM",
+        "countryCode": "61",
+        "areaCode": "03",
+        "phoneNumber": "03 8678 5555",
+        "concatenatedPhoneNumber": "03 8576 5555",
+        "isPrimary": true
+      },
+      {
+        "id": "1239",
+        "purpose": "PSL",
+        "countryCode": "1-USA",
+        "phoneNumber": "8767 657 956",
+        "concatenatedPhoneNumber": "9878 231 956"
+      },
+      {
+        "id": "1240",
+        "purpose": "OTH",
+        "countryCode": "64-NZ",
+        "phoneNumber": "61 3 7867 8888",
+        "concatenatedPhoneNumber": "61 3 7689 8888"
+      }
+    ],
+    "emailAddresses": [
+      {
+        "id": "4567",
+        "purpose": "WRK",
+        "isEcommConsent": true,
+        "address": "xyz@gmail.com"
+      }
+    ],
+    "attestations": {
+      "isAuTaxObligationCompleted": true,
+      "isUsTaxObligationCompleted": true,
+      "isOtherTaxObligationCompleted": true
+    },
+    "taxObligations": {
+      "au": {
+        "isAuTaxResident": true,
+        "tfnStatus": "QUOTED"
+      },
+      "other": [
+        {
+          "taxCountry": "US",
+          "taxIdentificationNumber": "987654321"
+        },
+        {
+          "taxCountry": "GB",
+          "absentTinReasonCode": "B",
+          "absentTinReasonExplanation": "I threw it out"
+        },
+        {
+          "taxCountry": "NZ",
+          "taxIdentificationNumber": "987654321"
+        },
+        {
+          "taxCountry": "INDIA",
+          "taxIdentificationNumber": "AMKYR7835G"
+        }
+      ]
+    },
+    "customerNumber": "831985901",
+    "primaryAddress": {
+      "id": "8935",
+      "streetNumber": "800",
+      "streetName": "Bourke",
+      "city": "Docklands",
+      "state": "VIC",
+      "postCode": "3008",
+      "country": "AU",
+      "country$": "AU",
+      "purpose": "HOM",
+      "addressLine1": "800 Bourke Street",
+      "addressLine2": "Docklands VIC 3008 Australia",
+      "countLinkedAccounts": 3,
+      "streetType": "St",
+      "townSuburb": "Docklands",
+      "displayAddress": "800 Bourke Docklands VIC 3008 AUSTRALIA "
+    },
+    "addresses": [
+      {
+        "id": "8935",
+        "streetNumber": "800",
+        "streetName": "Bourke",
+        "city": "Docklands",
+        "state": "VIC",
+        "postCode": "3008",
+        "country": "AU",
+        "country$": "AU",
+        "purpose": "HOM",
+        "addressLine1": "800 Bourke Street",
+        "addressLine2": "Docklands VIC 3008 Australia",
+        "countLinkedAccounts": 3,
+        "streetType": "St",
+        "townSuburb": "Docklands",
+        "displayAddress": "800 Bourke Docklands VIC 3008 AUSTRALIA "
+      },
+      {
+        "id": "1-GNHCL8",
+        "streetName": "Alma",
+        "city": "DAKABIN",
+        "state": "QLD",
+        "postCode": "4503",
+        "country": "AU",
+        "country$": "AU",
+        "purpose": "COM",
+        "addressLine1": "Alma Sanctuary Reserve Lot 900 Alma RD",
+        "addressLine2": "DAKABIN, QLD, 4503, AU",
+        "countLinkedAccounts": 1,
+        "propertyName": "Alma Sanctuary Reserve",
+        "allotment": "Lot 900",
+        "streetType": "RD",
+        "townSuburb": "DAKABIN",
+        "displayAddress": "Alma DAKABIN QLD 4503 AUSTRALIA "
+      },
+      {
+        "id": "8965",
+        "city": "Melbourne",
+        "state": "VIC",
+        "postCode": "3000",
+        "country": "AU",
+        "country$": "AU",
+        "purpose": "COM",
+        "addressLine1": "PO Box 77",
+        "addressLine2": "Melbourne 3000 VIC Australia",
+        "countLinkedAccounts": 1,
+        "postalDeliveryType": "GPOBOX",
+        "poBoxNumber": "77",
+        "townSuburb": "Melbourne",
+        "displayAddress": "Melbourne VIC 3000 AUSTRALIA "
+      }
+    ],
+    "displayAddress": "800 Bourke Docklands VIC 3008 AUSTRALIA "
+  },
+  "loading": false
+}
