@@ -3,7 +3,10 @@ import {Recipe} from "./recipe";
 import {ShoppingList} from "./shoppinglist";
 import {Profile} from "./profile";
 
-import '../css/style.less';
+import user from './user.json';
+
+import '../assets/css/bootstrap.css';
+import '../assets/css/style.less';
 
 function numbers() {
     return [1,2,3,4,5,6,7,8,9];
@@ -36,6 +39,6 @@ export class ReactApp extends React.Component {
 */
 
 ReactDOM.render(
-    <Profile name="Hafeez"/>,
+    <Profile customer={user.customer}/>,
     document.getElementById('app')
 );

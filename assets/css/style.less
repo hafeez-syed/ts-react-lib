@@ -1,4 +1,5 @@
-/*#app {
+/*
+#app {
   color: #5C5C5C;
   display: flex;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -18,10 +19,22 @@
   .card-address {
     flex-grow: 2;
   }
-}*/
+}
+*/
 
 .profile {
+  /*
+  display: flex;
+  flex-wrap: wrap;
+  */
   margin: 20px 0;
+}
+
+.profile .profile-column {
+  /*
+  display: flex;
+  flex-direction: column;
+  */
 }
 
 .profile-sidebar {
@@ -118,23 +131,20 @@
 .profile-content {
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: block;
   font-family: arial;
   margin: auto;
   min-height: 370px;
-  min-width: 600px;
   padding: 20px;
-  text-align: center;
-  width: 100%;
 }
 
+/*
 .profile [class^=col-] {
   float: left;
 }
+*/
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -172,4 +182,29 @@
   border-radius: 50%;
   height: 200px;
   width: 200px;
+}
+
+.border-between > [class*='col-']:before {
+  background: #e3e3e3;
+  bottom: 0;
+  content: " ";
+  left: 0;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  width: 1px;
+}
+
+.border-between > [class*='col-']:first-child:before {
+  display: none;
+}
+
+.address-wrapper {
+  border-bottom: 1px solid #e3e3e3;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.address-wrapper:last-child {
+  border-bottom: none;
 }
