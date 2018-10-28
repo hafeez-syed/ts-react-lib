@@ -1,7 +1,7 @@
-const path = require('path');
 const webpack = require('webpack');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: './components/index.js',
@@ -24,15 +24,14 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			'React': 'react',
 			'ReactDOM': 'react-dom',
-		})
+		}),
+        new CopyWebpackPlugin([
+            {from: 'assets/img', to: 'images'}
+        ])
 	],
     externals: {
         'React': 'react',
         'ReactDOM': 'react-dom'
-    },
-	output: {
-		filename: 'dev-react-component.js',
-		path: path.resolve(__dirname, './dist/')
-	}
+    }
 };
 

@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 
@@ -14,6 +15,10 @@ module.exports = merge(common, {
             template: './index.html',
         })
     ],
+    output: {
+        filename: 'react-component.umd.js',
+        path: path.resolve(__dirname, './dist/')
+    },
     devServer: {
 	    contentBase: './dist'
     }

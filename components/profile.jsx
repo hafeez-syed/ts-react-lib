@@ -39,7 +39,7 @@ export class Profile extends React.Component {
             <div className="row profile">
                 <div className="col-md-3 profile-column">
                     <div className="card">
-                        <img src={require(`./img/${customer.gender === 'FEM' ? 'female' : 'male'}.jpg`)} alt="John" />
+                        <img src={require(`../assets/img/${customer.gender === 'FEM' ? 'female' : 'male'}.jpg`)} alt="John" />
                         <h1>{customer.firstName} {customer.lastName}</h1>
                         <p className="title">{customer.customerNumber}</p>
                         <p>{customer.displayAddress}</p>

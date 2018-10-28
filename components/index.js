@@ -38,7 +38,9 @@ export class ReactApp extends React.Component {
 }
 */
 
+/*
 ReactDOM.render(
     <Profile customer={user.customer}/>,
     document.getElementById('app')
 );
+*/
