@@ -1,12 +1,31 @@
 import PropTypes from 'prop-types';
 import * as React from "react";
 
+import { createStore } from 'redux';
+import {AddressReducer} from '../../reducers/address';
+import {addressLoadedAction, addressDeletedAction, customerLoadedAction} from '../../actions/';
+
 import Heading from './heading';
 import Rows from './rows';
 import Delete from './delete';
 
+let addressStore;
+let dispatchStoreEvent = (address, addressIndex) => {
+	addressStore.dispatch(addressDeletedAction(address, addressIndex))
+};
+
 export default function Address (props) {
-    return (
+	addressStore = createStore(AddressReducer);
+
+	addressStore.subscribe(() => {
+		console.log(addressStore.getState());
+		console.log(props);
+		props.addresses = addressStore.getState();
+	});
+
+	addressStore.dispatch(addressLoadedAction(props.addresses));
+
+	return (
     	<div>
 		    {props.addresses.map((address, index) => {
 		    	return (
@@ -16,7 +35,7 @@ export default function Address (props) {
 					    <Rows label='City' value={address.city || ''} />
 					    <Rows label='Postcode' value={address.postCode || ''} />
 					    <Rows label='State' value={address.state || ''} />
-					    <Delete />
+					    <Delete onClickHandler={dispatchStoreEvent} data={props.addresses} order={index} />
 				    </div>
 			    )
 		    })}

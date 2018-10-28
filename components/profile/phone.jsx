@@ -15,7 +15,7 @@ export default function PhoneNumber (props) {
 						<Rows label='Id' value={phone.id || ''} />
 						<Rows label='Phone #' value={phone.phoneNumber || ''} />
 						<Rows label='Country code' value={phone.countryCode || ''} />
-						<Delete />
+						{/*<Delete />*/}
 					</div>
 				)
 			})}

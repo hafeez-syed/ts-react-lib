@@ -1,8 +1,14 @@
 import * as React from 'react';
+import { createStore } from 'redux';
+import {CustomerReducer} from '../reducers/';
+import {customerLoadedAction, customerStatusAction} from '../actions/';
 
+import Customer from './profile/customer';
 import Address from './profile/address';
 import PhoneNumber from './profile/phone';
 import EmailAddress from './profile/email';
+
+let customerStore;
 
 export class Profile extends React.Component {
     constructor(props) {
@@ -11,6 +17,12 @@ export class Profile extends React.Component {
 	    this.state = {
 		    customer: props.customer
 	    };
+	    customerStore = createStore(CustomerReducer);
+
+	    this.updateCustomer = this.updateCustomer.bind(this);
+
+	    customerStore.subscribe(this.updateCustomer);
+	    customerStore.dispatch(customerLoadedAction());
     }
 
 	componentWillMount() {
@@ -21,36 +33,36 @@ export class Profile extends React.Component {
 	    console.log('2. componentDidMount');
     }
 
-	componentDidUpdate() {
-		debugger;
+	componentDidUpdate(data) {
+		//debugger;
 	}
 
-    componentWillUpdate() {
-	    debugger;
+    componentWillUpdate(data) {
+	    //debugger;
     }
 
 
 	updateCustomer(customer) {
 		this.setState(() => {
 			return {
-				customer: customer
+				customer: customer || customerStore.getState()
 			}
 		});
 	}
-    render() {
+
+	onToggleCustomerStatus() {
+		customerStore.dispatch(customerStatusAction(this.state.customer));
+	};
+
+
+	render() {
         let customer = this.state.customer;
+        let statusHandler = this.onToggleCustomerStatus.bind(this);
+
         return (
             <div className="row profile">
                 <div className="col-md-3 profile-column">
-                    <div className="card">
-                        <img src={require(`../assets/img/${customer.gender === 'FEM' ? 'female' : 'male'}.jpg`)} alt="John" />
-                        <h1>{customer.firstName} {customer.lastName}</h1>
-                        <p className="title">{customer.customerNumber}</p>
-                        <p>{customer.displayAddress}</p>
-                        <p>
-                            <button>Contact</button>
-                        </p>
-                    </div>
+                    <Customer customer={customer} onStatusClick={statusHandler} />
                 </div>
                 <div className="col-md-9 profile-column">
                     <div className="profile-content">
