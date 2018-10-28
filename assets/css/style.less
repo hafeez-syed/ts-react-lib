@@ -192,19 +192,23 @@
   position: absolute;
   text-align: left;
   top: 0;
-  width: 1px;
+  width: 0;
 }
 
 .border-between > [class*='col-']:first-child:before {
   display: none;
 }
 
-.address-wrapper {
-  border-bottom: 1px solid #e3e3e3;
+.content-wrapper {
+  background: #eee;
+  min-height: 120px;
   margin-top: 20px;
-  padding-bottom: 10px;
+  padding: 10px 10px 0 10px;
 }
 
-.address-wrapper:last-child {
-  border-bottom: none;
+.content-wrapper button {
+  background: #ff0000;
+  border: 2px solid #fff;
+  border-radius: 10%;
+  color: #fff;
 }
