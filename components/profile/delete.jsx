@@ -5,10 +5,13 @@ export default function Delete (props) {
 	return (
 		<div className="row">
 			<div className="pull-right">
+                <button onClick={() => onClickHandler(order, componentType)}>Delete</button>
+{/*
 				{onClickHandler && order
 					? <button onClick={() => onClickHandler(order, componentType)}>Delete</button>
 					: <button>Delete</button>
 				}
+*/}
 			</div>
 		</div>
 	)

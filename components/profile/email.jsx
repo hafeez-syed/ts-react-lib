@@ -15,7 +15,6 @@ export default function EmailAddress ({emailAddresses, deleteHandler}) {
 						<Rows label='Id' value={email.id || ''} />
 						<Rows label='Email address' value={email.address || ''} />
 						<Rows label='' value={''} />
-                        <Delete onClickHandler={deleteHandler} order={index} componentType='email' />
 					</div>
 				)
 			})}
