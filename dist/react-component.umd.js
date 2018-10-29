@@ -987,19 +987,19 @@ webpackContext.id = 11;
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/female.jpg";
+module.exports = __webpack_require__.p + "nabone-react-customer/components/app.reactCustomer/host/assets/img/female.jpg";
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/male.jpg";
+module.exports = __webpack_require__.p + "nabone-react-customer/components/app.reactCustomer/host/assets/img/male.jpg";
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/nopic.jpg";
+module.exports = __webpack_require__.p + "nabone-react-customer/components/app.reactCustomer/host/assets/img/nopic.jpg";
 
 /***/ }),
 /* 15 */
