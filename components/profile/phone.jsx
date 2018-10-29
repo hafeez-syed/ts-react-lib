@@ -5,17 +5,17 @@ import Heading from './heading';
 import Rows from './rows';
 import Delete from "./delete";
 
-export default function PhoneNumber (props) {
+export default function PhoneNumber ({phoneNumbers, deleteHandler}) {
 	return (
 		<div>
-			{props.phoneNumbers.map((phone, index) => {
+			{phoneNumbers.map((phone, index) => {
 				return (
 					<div className="content-wrapper" key={phone.id + index}>
 						<Heading heading={`Phone ${index + 1}`} />
 						<Rows label='Id' value={phone.id || ''} />
 						<Rows label='Phone #' value={phone.phoneNumber || ''} />
 						<Rows label='Country code' value={phone.countryCode || ''} />
-						{/*<Delete />*/}
+						<Delete onClickHandler={deleteHandler} order={index} componentType='phone' />
 					</div>
 				)
 			})}

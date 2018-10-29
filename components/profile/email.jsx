@@ -5,17 +5,17 @@ import Heading from './heading';
 import Rows from './rows';
 import Delete from "./delete";
 
-export default function EmailAddress (props) {
+export default function EmailAddress ({emailAddresses, deleteHandler}) {
 	return (
 		<div>
-			{props.emailAddresses.map((email, index) => {
+			{emailAddresses.map((email, index) => {
 				return (
 					<div className="content-wrapper" key={email.id + index}>
 						<Heading heading={`Email address ${index + 1}`} />
 						<Rows label='Id' value={email.id || ''} />
 						<Rows label='Email address' value={email.address || ''} />
 						<Rows label='' value={''} />
-						{/*<Delete />*/}
+                        <Delete onClickHandler={deleteHandler} order={index} componentType='email' />
 					</div>
 				)
 			})}
