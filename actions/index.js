@@ -22,48 +22,45 @@ export const customerStatusAction = (customer) => {
 	};
 };
 
-export const addressLoadedAction = (addresses) => {
+export const addressLoadedAction = () => {
 	return {
-		type: ADDRESS_LOADED,
-		addresses
+		type: ADDRESS_LOADED
 	};
 };
 
-export const addressDeletedAction = (addresses, index) => {
+export const addressDeletedAction = (customer, index) => {
 	return {
 		type: ADDRESS_DELETED,
 		index,
-		addresses
+        customer
 	};
 };
 
-export const phoneNumberLoadedAction = (phoneNumber) => {
+export const phoneNumberLoadedAction = () => {
 	return {
-		type: PHONE_NUMBER_LOADED,
-		phoneNumber
+		type: PHONE_NUMBER_LOADED
 	};
 };
 
 
-export const phoneNumberDeletedAction = (phoneNumber, index) => {
+export const phoneNumberDeletedAction = (customer, index) => {
 	return {
 		type: PHONE_NUMBER_DELETED,
 		index,
-		phoneNumber
+        customer
 	};
 };
 
-export const emailAddressLoadedAction = (emailAddress) => {
+export const emailAddressLoadedAction = () => {
 	return {
-		type: EMAIL_ADDRESS_LOADED,
-		emailAddress
+		type: EMAIL_ADDRESS_LOADED
 	};
 };
 
-export const emailAddressDeletedAction = (emailAddress, index) => {
+export const emailAddressDeletedAction = (customer, index) => {
 	return {
 		type: EMAIL_ADDRESS_DELETED,
 		index,
-		emailAddress
+        customer
 	};
 };
