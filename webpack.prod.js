@@ -19,7 +19,7 @@ module.exports = [
 function createModuleConfig(target) {
     return merge(common, {
 	    optimization: {
-		    minimize: false
+		    minimize: true
 	    },
         output: {
             path: path.resolve(__dirname, './dist/'),
