@@ -98,8 +98,6 @@ export class Profile extends React.Component {
 	};
 
 	onDeleteCustomerData(itemIndex, componentType) {
-	    debugger;
-	    let action;
 	    switch (componentType) {
             case 'address':
                 addressStore.dispatch(addressDeletedAction(this.state.customer, itemIndex));
