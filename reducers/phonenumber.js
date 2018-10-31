@@ -1,9 +1,9 @@
 import {PHONE_NUMBER_LOADED, PHONE_NUMBER_DELETED} from '../actions/types';
 
-export const PhoneNumberReducer = (previousState = [], action) => {
+export const PhoneNumberReducer = (previousState = {}, action) => {
 	switch (action.type) {
 		case PHONE_NUMBER_LOADED:
-			return action.customer || previousState;
+			return { ...action.customer };
         case PHONE_NUMBER_DELETED:
             return {
                 ...action.customer,

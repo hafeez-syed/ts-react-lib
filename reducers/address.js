@@ -1,9 +1,9 @@
 import {ADDRESS_LOADED, ADDRESS_DELETED} from '../actions/types';
 
-export const AddressReducer = (previousState = [], action) => {
+export const AddressReducer = (previousState = {}, action) => {
 	switch (action.type) {
 		case ADDRESS_LOADED:
-			return action.customer || previousState;
+			return { ...action.customer };
         case ADDRESS_DELETED:
             return {
                 ...action.customer,
