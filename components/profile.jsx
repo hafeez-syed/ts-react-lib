@@ -18,11 +18,6 @@ import Address from './profile/address';
 import PhoneNumber from './profile/phone';
 import EmailAddress from './profile/email';
 
-let customerStore;
-let addressStore;
-let phoneStore;
-let emailStore;
-
 const profileReducers = combineReducers(
 	{
 		CustomerReducer,
@@ -53,44 +48,11 @@ export class Profile extends React.Component {
 		    customer: props.customer
 	    };
         this.updateCustomer = this.updateCustomer.bind(this);
-        //this.updateAddress = this.updateAddress.bind(this);
-        //this.updatePhoneNumber = this.updatePhoneNumber.bind(this);
-        //this.updateEmailAddress = this.updateEmailAddress.bind(this);
-
-        /*customerStore = createStore(CustomerReducer);
-	    customerStore.subscribe(this.updateCustomer);
-	    customerStore.dispatch(customerLoadedAction());
-
-        addressStore = createStore(AddressReducer);
-        addressStore.subscribe(this.updateAddress);
-        addressStore.dispatch(addressLoadedAction());
-
-        phoneStore = createStore(PhoneNumberReducer);
-        phoneStore.subscribe(this.updatePhoneNumber);
-        phoneStore.dispatch(phoneNumberLoadedAction());
-
-        emailStore = createStore(EmailAddressReducer);
-        emailStore.subscribe(this.updateEmailAddress);
-        emailStore.dispatch(emailAddressLoadedAction());*/
-
-	    //profileStore = createStore(CustomerReducer);
-	    profileStore.subscribe(this.updateCustomer);
-	    profileStore.dispatch(customerLoadedAction());
-
-        //addressStore = createStore(AddressReducer);
-	    //profileStore.subscribe(this.updateAddress);
 	    profileStore.subscribe(this.updateCustomer);
 	    profileStore.dispatch(addressLoadedAction());
-
-        //phoneStore = createStore(PhoneNumberReducer);
-	    //profileStore.subscribe(this.updatePhoneNumber);
-	    profileStore.subscribe(this.updateCustomer);
-	    profileStore.dispatch(phoneNumberLoadedAction());
-
-        //emailStore = createStore(EmailAddressReducer);
-	    //profileStore.subscribe(this.updateEmailAddress);
-	    profileStore.subscribe(this.updateCustomer);
+	    profileStore.dispatch(customerLoadedAction());
 	    profileStore.dispatch(emailAddressLoadedAction());
+	    profileStore.dispatch(phoneNumberLoadedAction());
     }
 
 	componentWillMount() {
@@ -101,6 +63,10 @@ export class Profile extends React.Component {
 	    console.log('2. componentDidMount');
     }
 
+	getDerivedStateFromProps(nextProps, ) {
+	    console.log('3. componentWillReceiveProps');
+    }
+
 	updateCustomer() {
 		this.setState(() => {
 			return {
@@ -109,36 +75,8 @@ export class Profile extends React.Component {
 		});
 	}
 
-	/*updateAddress(customer) {
-		this.setState(() => {
-			return {
-				//customer: customer || addressStore.getState()
-				customer: customer || profileStore.getState()
-			}
-		});
-	}
-
-	updatePhoneNumber(customer) {
-		this.setState(() => {
-			return {
-				//customer: customer || phoneStore.getState()
-				customer: customer || profileStore.getState()
-			}
-		});
-	}
-
-    updateEmailAddress(customer) {
-		this.setState(() => {
-			return {
-				//customer: customer || phoneStore.getState()
-				customer: customer || profileStore.getState()
-			}
-		});
-	}*/
-
 	onToggleCustomerStatus() {
 		componentType = 'customer';
-		//customerStore.dispatch(customerStatusAction(this.state.customer));
 		profileStore.dispatch(customerStatusAction(this.state.customer));
 	};
 
@@ -146,15 +84,12 @@ export class Profile extends React.Component {
 		componentType = componentActionToDispatch;
 	    switch (componentType) {
             case 'address':
-                //addressStore.dispatch(addressDeletedAction(this.state.customer, itemIndex));
 	            profileStore.dispatch(addressDeletedAction(this.state.customer, itemIndex));
                 break;
             case 'phone':
-                //phoneStore.dispatch(phoneNumberDeletedAction(this.state.customer, itemIndex));
 	            profileStore.dispatch(phoneNumberDeletedAction(this.state.customer, itemIndex));
                 break;
             case 'email':
-                //emailStore.dispatch(emailAddressDeletedAction(this.state.customer, itemIndex));
 	            profileStore.dispatch(emailAddressDeletedAction(this.state.customer, itemIndex));
                 break;
         }
