@@ -13,6 +13,13 @@ ReactDOM.render(
     document.getElementById('app')
 );
 
+window.replaceComponent = function() {
+	ReactDOM.render(
+		<ShoppingList name='Facebook' />,
+		document.getElementById('app')
+	);
+};
+
 export {
 	Avatar,
 	Recipe,

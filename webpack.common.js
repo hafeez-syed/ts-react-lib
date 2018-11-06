@@ -34,4 +34,3 @@ module.exports = {
         'ReactDOM': 'react-dom'
     }
 };
-

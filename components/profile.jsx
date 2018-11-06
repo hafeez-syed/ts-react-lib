@@ -41,38 +41,60 @@ const devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_D
 const profileStore = createStore(profileReducers, devToolsEnhancer);
 
 export class Profile extends React.Component {
+	__isMounted = false;
     constructor(props) {
         super(props);
-
 	    this.state = {
 		    customer: props.customer
 	    };
         this.updateCustomer = this.updateCustomer.bind(this);
 	    profileStore.subscribe(this.updateCustomer);
-	    profileStore.dispatch(addressLoadedAction());
-	    profileStore.dispatch(customerLoadedAction());
-	    profileStore.dispatch(emailAddressLoadedAction());
-	    profileStore.dispatch(phoneNumberLoadedAction());
+
     }
 
-	componentWillMount() {
-		console.log('1. componentWillMount');
+	static getDerivedStateFromProps(prevProps, newProps) {
+		console.log('1. getDerivedStateFromProps');
+		if (prevProps !== newProps) {
+			console.log(prevProps, newProps);
+			/*profileStore.dispatch(addressLoadedAction());
+			profileStore.dispatch(customerLoadedAction());
+			profileStore.dispatch(emailAddressLoadedAction());
+			profileStore.dispatch(phoneNumberLoadedAction());*/
+			return newProps;
+		} else {
+			console.log('First attempt');
+		}
+
+		return undefined;
+	}
+
+	shouldComponentUpdate(nextState, nextProps) {
+		console.log('shouldComponentUpdate...');
+		return nextState !== nextProps;
 	}
 
     componentDidMount() {
-	    console.log('2. componentDidMount');
+    	this.__isMounted = true;
+	    console.log('3. componentDidMount');
     }
 
-	getDerivedStateFromProps(nextProps, ) {
-	    console.log('3. componentWillReceiveProps');
+    componentDidUpdate() {
+	    console.log('4. componentDidUpdate');
     }
+
+	componentWillUnmount() {
+		console.log('5. componentWillUnmount');
+	}
 
 	updateCustomer() {
-		this.setState(() => {
-			return {
-				customer: profileStore.getState()[reducersMapping[componentType]]
-			}
-		});
+    	if (this.__isMounted) {
+		    console.log(':: update customer ::');
+		    this.setState(() => {
+			    return {
+				    customer: profileStore.getState()[reducersMapping[componentType]]
+			    }
+		    });
+	    }
 	}
 
 	onToggleCustomerStatus() {
@@ -96,6 +118,7 @@ export class Profile extends React.Component {
 	};
 
 	render() {
+		console.log('2. render');
         let customer = this.state.customer;
         let statusHandler = this.onToggleCustomerStatus.bind(this);
         let onDeleteHandler = this.onDeleteCustomerData.bind(this);
